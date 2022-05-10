@@ -20,6 +20,23 @@ body {
   background-color: hsl(225, 6%, 25%);
 }
 
+.editor-wrapper.collapse {
+  flex-grow: 0;
+}
+
+.editor-wrapper.collapse .CodeMirror-scroll {
+  position: absolute;
+  overflow: hidden !important;
+}
+
+.resize-btn{
+  margin-left: .5rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
 .title {
   display: flex;
   justify-content: space-between;
