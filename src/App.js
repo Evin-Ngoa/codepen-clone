@@ -9,7 +9,7 @@ function App() {
       <Editor
         language="xml"
         renderName="HTML"
-        value=""
+        value={htmlEditor}
         onChange={setHtmlEditor}
       />
 
