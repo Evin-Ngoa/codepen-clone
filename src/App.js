@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Editor from "./components/Editor";
+import useLocalStorage from "./hooks/useLocalStorage";
 
 function App() {
-  const [htmlEditor, setHtmlEditor] = useState("");
-  const [cssEditor, setCssEditor] = useState("");
-  const [jsEditor, setJsEditor] = useState("");
+  const [htmlEditor, setHtmlEditor] = useLocalStorage("html","");
+  const [cssEditor, setCssEditor] = useLocalStorage("css","");
+  const [jsEditor, setJsEditor] = useLocalStorage("js","")
   const [customDom, setCustomDom] = useState("");
 
   useEffect(() => {
