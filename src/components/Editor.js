@@ -4,7 +4,7 @@ import "codemirror/theme/material.css";
 import "codemirror/mode/xml/xml";
 import "codemirror/mode/javascript/javascript";
 import "codemirror/mode/css/css";
-import { Controlled } from "react-codemirror2";
+import { Controlled as ControlledEditor } from "react-codemirror2";
 
 const Editor = ( props ) => {
   const { renderName, onChange, value, language } = props;
@@ -19,7 +19,7 @@ const Editor = ( props ) => {
         {renderName}
         <button>O/C</button>
       </div>
-      <Controlled
+      <ControlledEditor
         onBeforeChange={handleChange}
         value={value}
         className="code-mirror-wrapper"
