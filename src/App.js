@@ -1,18 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Editor from "./components/Editor";
 
 function App() {
   const [htmlEditor, setHtmlEditor] = useState("");
   const [cssEditor, setCssEditor] = useState("");
   const [jsEditor, setJsEditor] = useState("");
+  const [customDom, setCustomDom] = useState("");
 
-  const customDom = `
-  <html>
-    <body>${htmlEditor}</body>
-    <style>${cssEditor}</style>
-    <script>${jsEditor}</script>
-  </html>
-  `;
+  useEffect(() => {
+    const timeOut = setTimeout(() => {
+      setCustomDom(
+        `
+        <html>
+          <body>${htmlEditor}</body>
+          <style>${cssEditor}</style>
+          <script>${jsEditor}</script>
+        </html>
+        `
+      );
+    }, 400);
+
+    return () => clearTimeout(timeOut);
+  }, [htmlEditor, cssEditor, jsEditor]);
 
   return (
     <>
